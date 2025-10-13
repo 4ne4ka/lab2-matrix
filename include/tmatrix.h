@@ -165,7 +165,7 @@ public:
           tmp.pMem[i] = pMem[i] - v.pMem[i];
       return tmp;
   }
-  T operator*(const TDynamicVector& v) noexcept(noexcept(T()))
+  TDynamicVector operator*(const TDynamicVector& v) noexcept(noexcept(T()))
   {
       if (sz != v.sz)
           throw out_of_range("sz != v.sz");
@@ -214,7 +214,27 @@ public:
       pMem[i] = TDynamicVector<T>(sz);
   }
 
+      T& at(size_t i, size_t j)
+    {
+        if (i >= sz || j >= sz)
+            throw out_of_range("too lagre index");
+        if (i < 0 || j < 0)
+            throw out_of_range("negative index");
+        return pMem[i][j];
+    }
+
+    const T& at(size_t i, size_t j) const
+    {
+        if (i >= sz || j >= sz)
+            throw out_of_range("too lagre index");
+        if (i < 0 || j < 0)
+            throw out_of_range("negative index");
+        return pMem[i][j];
+    }
+
   using TDynamicVector<TDynamicVector<T>>::operator[];
+
+  size_t size() const noexcept { return sz; }
 
   // сравнение
   bool operator==(const TDynamicMatrix& m) const noexcept
