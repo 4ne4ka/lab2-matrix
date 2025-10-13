@@ -26,32 +26,32 @@ TEST(TDynamicMatrix, can_create_copied_matrix)
 
 TEST(TDynamicMatrix, copied_matrix_is_equal_to_source_one)
 {
-  ADD_FAILURE();
+	ADD_FAILURE();
 }
 
 TEST(TDynamicMatrix, copied_matrix_has_its_own_memory)
 {
-  ADD_FAILURE();
+	ADD_FAILURE();
 }
 
 TEST(TDynamicMatrix, can_get_size)
 {
-  ADD_FAILURE();
+	ADD_FAILURE();
 }
 
 TEST(TDynamicMatrix, can_set_and_get_element)
 {
-  ADD_FAILURE();
+	ADD_FAILURE();
 }
 
 TEST(TDynamicMatrix, throws_when_set_element_with_negative_index)
 {
-  ADD_FAILURE();
+	ADD_FAILURE();
 }
 
 TEST(TDynamicMatrix, throws_when_set_element_with_too_large_index)
 {
-  ADD_FAILURE();
+	ADD_FAILURE();
 }
 
 TEST(TDynamicMatrix, can_assign_matrix_to_itself)
