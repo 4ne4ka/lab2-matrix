@@ -199,14 +199,18 @@ TEST(TDynamicVector, cant_subtract_vectors_with_not_equal_size)
 
 TEST(TDynamicVector, can_multiply_vectors_with_equal_size)
 {
-	TDynamicVector<int> v(5), v1(5), v2(5);
-	for (int i = 0; i < 5; i++) {
-		v[i] = i;
-		v1[i] = i + 10;
+	TDynamicVector<int> v1(5), v2(5);
+	int res = 0, res2 = 0;
+	for (int i = 0; i < v1.size(); i++)
+	{
+		v1[i] = i;
+		v2[i] = i * 2;
+
+		res2 += i * i * 2;
 	}
-	for (int i = 0; i < 5; i++)
-		v2[i] = v[i] * v1[i];
-	EXPECT_EQ(v * v1, v2);
+
+	ASSERT_NO_THROW(res = v1 * v2);
+	EXPECT_EQ(res2, res);
 }
 
 TEST(TDynamicVector, cant_multiply_vectors_with_not_equal_size)
